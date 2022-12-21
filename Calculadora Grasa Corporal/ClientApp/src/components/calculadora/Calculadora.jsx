@@ -26,6 +26,7 @@ export const Calculadora = () => {
     const Limpiar = () => {
         document.getElementById("rdxMujer").checked = false;
         document.getElementById("rdxHombre").checked = false;
+        document.getElementById("divCadera").style.display = "none";
 
         setForm({
             genero: "",
@@ -63,7 +64,7 @@ export const Calculadora = () => {
     }
 
     useEffect(() => {
-        if (form.genero == 0) {
+        if (form.genero === 0) {
             setForm({
                 ...form,
                 cadera: 0
@@ -82,8 +83,8 @@ export const Calculadora = () => {
     }, [form.genero]);
 
     return (
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div style={{ padding: "5rem 3rem", width: "45%" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
+            <div style={{ padding: "5rem 3rem", width: "750px" }}>
                 <h1 style={{ color: "white" }}>
                     Calculadora de Grasa Corporal
                 </h1>

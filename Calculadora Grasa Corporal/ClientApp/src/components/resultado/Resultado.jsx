@@ -1,5 +1,5 @@
 ﻿export const Resultado = ({ res }) => {
-    const categoria = res.genero == 0 ? {
+    const categoria = res.genero === 0 ? {
         Escencial: {
             min: 2,
             max: 5
@@ -47,10 +47,10 @@
     const posicion = res.porcentaje >= categoria.Obeso.min ? "100%" : res.porcentaje <= categoria.Escencial.min ? "0" : (((res.porcentaje - categoria.Escencial.min) * 100) / (categoria.Obeso.min - categoria.Escencial.min)) + "%";
 
     return (
-        <div style={{ width: "45%", display: "flex", flexDirection: "column", justifyContent: "center", gap: "20px" }}>
+        <div style={{ width: "750px", padding:"5rem 3rem", display: "flex", flexDirection: "column", justifyContent: "center", gap: "20px" }}>
             <h3>Tu resultado: {res.porcentaje}%</h3>
 
-            <div style={{ width: "calc(90% - 50px)", position: "relative", height: "25px" }}>
+            <div style={{ width: "calc(100% - 50px)", position: "relative", height: "25px" }}>
                 <div style={{ position: "absolute", display: "flex", flexDirection: "column", alignItems: "center", width: "50px", left: posicion }}>
                     <label>
                         {res.porcentaje}%
@@ -60,10 +60,10 @@
                 </div>
             </div>
 
-            <div style={{ width: "90%", height: "50px", borderRadius: "5px", background: "linear-gradient(90deg, rgba(52,141,202,1) 0%, rgba(59,136,66,1) 25%, rgba(146,179,44,1) 50%, rgba(220,182,43,1) 75%, rgba(179,92,41,1) 100%)" }}>
+            <div style={{ width: "100%", height: "50px", borderRadius: "5px", background: "linear-gradient(90deg, rgba(52,141,202,1) 0%, rgba(59,136,66,1) 25%, rgba(146,179,44,1) 50%, rgba(220,182,43,1) 75%, rgba(179,92,41,1) 100%)" }}>
             </div>
 
-            <div style={{ display: "flex", width: "90%", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
                     <div style={{ background: "rgba(52,141,202,1)", width: "10px", height: "10px", borderRadius: "100%" }}>
                     </div>
